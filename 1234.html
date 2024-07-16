@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes for Jaanvi</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: pink;
+        flex-direction: column;
+    }
+    .page {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .login-page {
+        display: flex;
+        background-color: pink;
+        background-image: url(https://wallpaperset.com/w/full/5/b/f/99300.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .birthday-page {
+        background-color: red;
+        background-image: url(https://wallpapertag.com/wallpaper/full/4/b/6/936762-free-download-love-background-images-1920x1080-download.jpg);
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+    }
+    .yesno-page {
+        background-color: lightpink;
+        background-image: url(https://wallpapercave.com/wp/wp2707282.jpg);
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+    }
+    .login-form {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-form h2 {
+        margin-bottom: 20px;
+        color: #ff69b4;
+    }
+    .login-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ff69b4;
+        border-radius: 5px;
+    }
+    .login-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #ff69b4;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .birthday-page img {
+        width: 150px;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    .birthday-message {
+        font-size: 24px;
+        margin-top: 20px;
+        animation: fadeIn 2s;
+    }
+    .love-matter {
+        font-size: 18px;
+        margin-top: 20px;
+        color: #ffe4e1;
+    }
+    .next-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #ff69b4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #heading {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    #image {
+        max-width: 150px;
+        height: auto;
+        margin-top: 20px;
+    }
+    #yesButton, #noButton {
+        background: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="page login-page" id="login-page">
+      <div class="login-form">
+          <h2>Login</h2>
+          <input type="text" id="username" placeholder="Username">
+          <input type="password" id="password" placeholder="Password">
+          <button onclick="checkLogin()">Login</button>
+      </div>
+  </div>
+
+  <div class="page birthday-page" id="birthday-page">
+      <h1>Happy Birthday Jaanvi!</h1>
+      <img src="https://imagetolink.com/ib/4JqWtKsl4G.jpg" alt="Jaanvi">
+      <div class="birthday-message">Wishing you a day filled with love and joy!</div>
+      <div class="love-matter">
+          You are the light of my life. Every moment with you is a treasure. Your smile brightens up my world and your love fills my heart with happiness. 
+          I am so grateful to have you by my side, sharing every beautiful moment. Today, on your special day, I want you to know how much you mean to me.
+          You are my everything, and I promise to love you forever. I love you Jaanvi, my baby!
+      </div>
+      <button class="next-button" onclick="goToNextPage()">Next</button>
+  </div>
+
+  <div class="page yesno-page" id="yesno-page">
+      <h1 id="heading">Do you Love me?😊</h1>
+      <img id="image" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGJ0b2Ztdjh6MXNlMTVzZXZuaGd4bG9vYnhyMXV3aDM0MWZ3OHRoNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif" alt="Placeholder Image">
+      <div>
+          <button id="yesButton">Yes</button>
+          <button id="noButton" onmouseover="moveButton()">No</button>
+      </div>
+  </div>
+
+  <script>
+      function checkLogin() {
+          var username = document.getElementById('username').value;
+          var password = document.getElementById('password').value;
+          if (username === 'jaanvi' && password === 'loveyoubaby') {
+              document.getElementById('login-page').style.display = 'none';
+              document.getElementById('birthday-page').style.display = 'flex';
+              launchConfetti();
+          } else {
+              alert('Incorrect username or password');
+          }
+      }
+
+      function launchConfetti() {
+          var duration = 5 * 1000;
+          var end = Date.now() + duration;
+
+          (function frame() {
+              confetti({
+                  particleCount: 3,
+                  angle: 60,
+                  spread: 55,
+                  origin: { x: 0 }
+              });
+              confetti({
+                  particleCount: 3,
+                  angle: 120,
+                  spread: 55,
+                  origin: { x: 1 }
+              });
+
+              if (Date.now() < end) {
+                  requestAnimationFrame(frame);
+              }
+          }());
+      }
+
+      function goToNextPage() {
+          document.getElementById('birthday-page').style.display = 'none';
+          document.getElementById('yesno-page').style.display = 'flex';
+      }
+
+      function moveButton() {
+          const noButton = document.getElementById('noButton');
+          const newX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+          const newY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+          noButton.style.position = 'absolute';
+          noButton.style.left = newX + 'px';
+          noButton.style.top = newY + 'px';
+      }
+      
+      document.getElementById('yesButton').addEventListener('click', () => {
+          document.getElementById('heading').textContent = "Hehe, I knew it!😊";
+          document.getElementById('image').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXE0aWZlaDM3bnlqamZma3drcGU1MzVzc3FwMmt2c3E1bDQyYnA2dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bA5cblwksWXDOwSzUI/giphy.gif";
+          document.getElementById('yesButton').style.display = "none";
+          document.getElementById('noButton').style.display = "none";
+      });
+
+      document.getElementById('noButton').addEventListener('click', () => {
+          document.getElementById('heading').textContent = "Sorry that you didn't like the image!";
+          document.getElementById('image').src = "https://via.placeholder.com/150";
+      });
+  </script>
+</body>
+</html>
